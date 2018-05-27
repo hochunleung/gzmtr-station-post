@@ -50,17 +50,21 @@
 }
 
 .capsule-bond-left {
-	background-color: rgba(0, 102, 158, 0.5);
 	border-right: 5px solid #FFFFFF;
-	border-top: 5px solid #FFFFFF;
-	border-bottom: 5px solid #FFFFFF;
-	border-top-right-radius: 56px;
-	border-bottom-right-radius: 56px;
-	width: 286px;
 	height: 56px;
 	position:absolute;
-	top: -5px;
+	top: 0px;
 	left: 0px;
+}
+
+.bond-left-1 {
+	background-color: rgba(0, 102, 158, 0.618);
+	width: 302px;
+}
+
+.bond-left-2 {
+	background-color: rgba(0, 102, 158, 0.382);
+	width: 253px;
 }
 
 .capsule {
@@ -130,11 +134,11 @@
 }
 
 .next-capsule {
-	right: 103px;
+	right: 105px;
 }
 
 .prev-capsule {
-	left: 103px;
+	left: 105px;
 }
 
 .prev-capsule .capsule-outline, .next-capsule .capsule-outline {
@@ -152,12 +156,12 @@
 }
 
 .prev-capsule .capsule-content {
-	border-color: rgba(0, 102, 158, 0.5);
-	color: rgba(0, 0, 0, 0.5)
+	border-color: rgba(0, 102, 158, 0.382);
+	color: rgba(0, 0, 0, 0.382)
 }
 
 .prev-capsule .capsule-bar {
-	background-color: rgba(0, 102, 158, 0.5);
+	background-color: rgba(0, 102, 158, 0.382);
 }
 
 .prev-capsule .capsule-line, .prev-capsule .capsule-station, .next-capsule .capsule-line, .next-capsule .capsule-station
@@ -173,12 +177,12 @@
 }
 
 #prev-station {
-	left: 51px;
-	color: rgba(0, 0, 0, 0.5)
+	left: 53px;
+	color: rgba(0, 0, 0, 0.382)
 }
 
 #next-station {
-	right: 65px;
+	right: 67px;
 }
 
 </style>
@@ -191,8 +195,10 @@
 	</div>
 	<div class="bond">
 		<div class="capsule-bond"></div>
-		<div class="capsule-bond-left" style="background-color: white;"></div>
-		<div class="capsule-bond-left"></div>
+		<div class="capsule-bond-left bond-left-1" style="background-color: white;"></div>
+		<div class="capsule-bond-left bond-left-1"></div>
+		<div class="capsule-bond-left bond-left-2" style="background-color: white;"></div>
+		<div class="capsule-bond-left bond-left-2"></div>
 		<div class="capsule this-capsule">
 			<div class="capsule-outline">
 				<div class="capsule-content">
@@ -236,4 +242,14 @@
 	</div>
 </div>
 </body>
+<script>
+	center=105+119/2;
+	prev=document.getElementById("prev-station");
+	width=prev.getElementsByClassName("notice-station-name")[0].offsetWidth;
+	prev.style.left=center-width/2+"px";
+	next=document.getElementById("next-station");
+	width=next.getElementsByClassName("notice-station-name")[0].offsetWidth;
+	next.style.right=center-width/2+"px";
+	
+</script>
 </html>
